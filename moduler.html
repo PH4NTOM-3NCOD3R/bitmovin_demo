@@ -139,7 +139,8 @@
         {
             "name": "Sintel",
             "dash": "https://bitdash-a.akamaihd.net/content/sintel/sintel.mpd",
-            "hls": "https://bitdash-a.akamaihd.net/content/sintel/hls/playlist.m3u8"
+            "hls": "https://bitdash-a.akamaihd.net/content/sintel/hls/playlist.m3u8",
+            "poster": "images/poster.jpg",
         },
         {
             "name": "Bitmovin Demo Video",
@@ -152,6 +153,14 @@
 
     var conf = {
         key: "e5f3c379-6d69-4eb6-ae26-8bf79e25c121",
+        playback: {
+            autoplay: false,
+            muted: false
+        },
+        tweaks : {
+            autoqualityswitching : true,
+            max_buffer_level     : 10
+        },
         events: {
             playbackfinished: function () {
                 if (i < playlist.length) {
@@ -183,7 +192,7 @@
     bitmovin.player.core.Player.addModule(window.bitmovin.player['xml'].default);
     bitmovin.player.core.Player.addModule(window.bitmovin.player['dash'].default);
 
-    var player = new bitmovin.player.Player(document.getElementById("player"), conf);
+    var player = new bitmovin.player.core.Player(document.getElementById("player"), conf);
     player.load(source).then(function () {
         console.log('Successfully loaded source');
     }, function () {
