@@ -142,6 +142,25 @@
 
     var conf = {
         key: "e5f3c379-6d69-4eb6-ae26-8bf79e25c121",
+        playback: {
+            autoplay: false,
+            muted: false
+        },
+        tweaks : {
+            autoqualityswitching : true,
+            max_buffer_level     : 5,
+            stop_download_on_pause : true
+        },
+        buffer: {
+          [MediaType.Video]: {
+            [BufferType.ForwardDuration]: 10,
+            [BufferType.BackwardDuration]: 20,
+          },
+          [MediaType.Audio]: {
+            [BufferType.ForwardDuration]: 10,
+            [BufferType.BackwardDuration]: 20,
+          },
+        },
         events: {
             playbackfinished: function () {
                 if (i < playlist.length) {
