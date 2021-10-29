@@ -135,6 +135,16 @@
     </div>
 </div>
 <script type="text/javascript">
+    bitmovin.player.core.Player.addModule(window.bitmovin.player['engine-bitmovin'].default);
+    bitmovin.player.core.Player.addModule(window.bitmovin.player['mserenderer'].default);
+    bitmovin.player.core.Player.addModule(window.bitmovin.player['hls'].default);
+    bitmovin.player.core.Player.addModule(window.bitmovin.player['abr'].default);
+    bitmovin.player.core.Player.addModule(window.bitmovin.player['container-ts'].default);
+    bitmovin.player.core.Player.addModule(window.bitmovin.player['polyfill'].default);
+    bitmovin.player.core.Player.addModule(window.bitmovin.player['style'].default);
+    bitmovin.player.core.Player.addModule(window.bitmovin.player['ui'].default);
+    bitmovin.player.core.Player.addModule(window.bitmovin.player['dash'].default);
+    bitmovin.player.core.Player.addModule(window.bitmovin.player['xml'].default);
     var playlist = [
         {
             "name": "Sintel",
