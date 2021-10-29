@@ -153,14 +153,14 @@
             stop_download_on_pause : true
         },
         buffer: {
-          [MediaType.Video]: {
-            [BufferType.ForwardDuration]: 10,
-            [BufferType.BackwardDuration]: 20,
-          },
-          [MediaType.Audio]: {
-            [BufferType.ForwardDuration]: 10,
-            [BufferType.BackwardDuration]: 20,
-          },
+            video: {
+                forwardduration: 10,
+                backwardduration: 20,
+            },
+            audio: {
+                 forwardduration: 10,
+                 backwardduration: 20,
+            },
         },
         events: {
             playbackfinished: function () {
